@@ -3,7 +3,6 @@ title: Reversing <code style="color:grey">php2shell</code> for beginners
 tags: [PHP, CVE, vulnerability]
 author: Darshan Naik
 ---
-
 <p align="center"> <img src="{{ 'images/php2shell/php2shell_banner.png' | relative_url }}" alt="php2 shell banner" width="1800" /> </p>
 
 ## Abstract
