@@ -271,6 +271,12 @@ dialog::backdrop {
   overscroll-behavior: contain;
 }
 
+dialog.image-lightbox:not([open]) {
+  display: none !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
 dialog.image-lightbox {
   margin: 0;
   padding: 0;
@@ -286,14 +292,22 @@ dialog.image-lightbox {
   border: none;
   outline: none;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
   color: #f6f7f9;
   z-index: 9999;
+  opacity: 0;
+  transform: scale(0.96);
+  transition-property: opacity, transform, display, overlay;
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-behavior: allow-discrete;
 }
 
 /* Entry / Exit animations conforming to Modern Web Guidance */
 dialog.image-lightbox[open] {
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto;
+  visibility: visible;
   opacity: 1;
   transform: scale(1);
 
@@ -301,15 +315,6 @@ dialog.image-lightbox[open] {
     opacity: 0;
     transform: scale(0.96);
   }
-}
-
-dialog.image-lightbox {
-  opacity: 0;
-  transform: scale(0.96);
-  transition-property: opacity, transform, display, overlay;
-  transition-duration: 0.25s;
-  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-  transition-behavior: allow-discrete;
 }
 
 dialog.image-lightbox::backdrop {

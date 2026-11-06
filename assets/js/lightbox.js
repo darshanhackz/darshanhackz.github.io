@@ -148,10 +148,6 @@
       } else {
         dialog.setAttribute('open', '');
       }
-
-      // Lock background scroll on mobile browsers
-      document.documentElement.style.overflow = 'hidden';
-      document.body.style.overflow = 'hidden';
     }
 
     function closeLightbox() {
@@ -162,10 +158,6 @@
       }
       resetZoom(false);
       img.src = '';
-
-      // Unlock background scroll
-      document.documentElement.style.overflow = '';
-      document.body.style.overflow = '';
     }
 
     // Modern Web Guidance fallback for light dismiss where closedby is unsupported
@@ -417,8 +409,6 @@
 
     dialog.addEventListener('close', function () {
       resetZoom(false);
-      document.documentElement.style.overflow = '';
-      document.body.style.overflow = '';
     });
 
     // Bind all content images in blog posts and pages
