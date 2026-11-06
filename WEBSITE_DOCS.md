@@ -15,6 +15,7 @@
 8. [Opening Animation](#8-opening-animation)
 9. [Running Locally](#9-running-locally)
 10. [Deploying to GitHub Pages](#10-deploying-to-github-pages)
+11. [Image Zoom & Lightbox](#11-image-zoom--lightbox)
 
 ---
 
@@ -38,11 +39,14 @@ site/
 │   └── post.html        ← Used for every blog post
 │
 ├── _includes/
+│   ├── lightbox.html    ← 🔍 Image popup & zoom modal component
 │   ├── social.html      ← Social icon links (auto-reads _config.yml)
 │   └── post-list.html   ← The post list component on homepage & blog page
 │
 └── assets/
     ├── profile.png      ← 📸 Your profile photo
+    ├── js/
+    │   └── lightbox.js  ← 🔍 Image zoom, pan, and lightbox logic
     └── css/
         └── style.css    ← All visual styling
 ```
@@ -288,6 +292,21 @@ git push origin main
 ```
 
 Within 30–60 seconds, GitHub automatically builds and updates your live site!
+
+---
+
+## 11. Image Zoom & Lightbox
+
+All screenshots and images inside blog posts are automatically interactive:
+- **Click / Tap to Enlarge**: Tapping any image opens a full-screen, focused modal overlay.
+- **Double-Tap / Click to Zoom**: Toggles between 1x (fit-to-screen) and 2.2x zoom focused on where you tapped.
+- **Pinch-to-Zoom (Mobile)**: Natural two-finger pinch-to-zoom in and out up to 4.5x.
+- **Swipe Down to Dismiss (Mobile)**: Swipe down on the image to dismiss smoothly, just like native iOS / Android apps.
+- **1-Finger Drag / Pan**: When zoomed in, easily pan in any direction across screenshots and code payloads.
+- **Mouse Wheel / Trackpad (Desktop)**: Smoothly zoom in and out with cursor focal point.
+- **On-Screen Toolbar**: Accessible touch-friendly buttons (44px+ hit targets) for Zoom Out (−), Zoom Level Indicator (%), Zoom In (+), Reset (1:1), and Close (✕).
+- **Safe-Area Aware**: Automatically respects iOS notch, dynamic island, and home indicator with `env(safe-area-inset-*)`.
+- **Keyboard Shortcuts**: `Esc` to close, `+` / `-` to zoom, `0` to reset, Arrow keys to pan.
 
 ---
 

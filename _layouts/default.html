@@ -25,6 +25,8 @@
     <span class="links social-links">{% include social.html %}<a href="{{ '/feed.xml' | relative_url }}" class="social-icon"><span>RSS</span></a></span>
   </footer>
 
+  {% include lightbox.html %}
+  <script src="{{ '/assets/js/lightbox.js' | relative_url }}" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       document.querySelectorAll('img:not([loading])').forEach(function (img) {
