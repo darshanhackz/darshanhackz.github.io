@@ -16,6 +16,7 @@
 9. [Running Locally](#9-running-locally)
 10. [Deploying to GitHub Pages](#10-deploying-to-github-pages)
 11. [Image Zoom & Lightbox](#11-image-zoom--lightbox)
+12. [Links Page (Labs, Projects & External Resources)](#12-links-page-labs-projects--external-resources)
 
 ---
 
@@ -28,6 +29,7 @@ site/
 ├── _config.yml          ← 🔑 Master settings (name, socials, URL)
 ├── index.html           ← Homepage
 ├── about.md             ← About page (plain text / Markdown)
+├── links.md             ← 🔗 Links page (labs, tools, profiles — EDIT THIS to add links)
 ├── blog.html            ← Blog listing page (auto-generated, don't edit)
 │
 ├── _posts/              ← 📝 YOUR BLOG POSTS LIVE HERE
@@ -257,15 +259,54 @@ Change `0.9s` to make the typing faster or slower.
 
 ## 9. Running Locally
 
-You need Ruby and Jekyll installed. Then:
+You need **Ruby** and **Bundler** installed on your system.
 
+### Prerequisites (First-time check)
+Verify Ruby and Bundler are installed:
 ```bash
-cd "darshanhacks Website/site"
-bundle install        # first time only
-bundle exec jekyll serve
+ruby -v
+bundle -v
 ```
 
-Open [http://localhost:4000](http://localhost:4000) in your browser. Changes to files auto-reload instantly (except `_config.yml` — restart the server for those).
+### Step-by-Step Guide
+
+1. **Open Terminal and navigate to the `site` folder:**
+   ```bash
+   cd "/Users/darshannareshnaik/Desktop/darshanhacks Website/site"
+   ```
+
+2. **Install dependencies (first time only):**
+   ```bash
+   bundle install
+   ```
+
+3. **Start the local server with live-reloading:**
+   ```bash
+   bundle exec jekyll serve --livereload --future
+   ```
+   - `--livereload`: Automatically refreshes your browser whenever you save changes to posts, HTML, or CSS.
+   - `--future`: Publishes posts dated with a future date (useful when writing posts scheduled for tomorrow or drafts).
+
+4. **View your website:**
+   - **Homepage:** [http://localhost:4000](http://localhost:4000)
+   - **Blog Archive:** [http://localhost:4000/blog/](http://localhost:4000/blog/)
+
+5. **Stop the server:**
+   - Press `Ctrl + C` in your terminal window.
+
+### Useful Tips & Troubleshooting
+
+- **Configuration Changes:** Whenever you edit `site/_config.yml`, changes will not appear until you restart the server (`Ctrl + C` and rerun the serve command).
+- **Port 4000 already in use?**
+  If you get an `Address already in use - bind(2) for 127.0.0.1:4000` error:
+  ```bash
+  # Option A: Find and stop the process using port 4000
+  lsof -ti :4000 | xargs kill -9
+
+  # Option B: Run on a different port (e.g. 4001)
+  bundle exec jekyll serve --livereload --future -P 4001
+  ```
+- **Live Rebuilding:** Any edits you save in `_posts/`, templates in `_layouts/`, or styles in `assets/css/style.css` will compile automatically in real time.
 
 ---
 
@@ -310,4 +351,44 @@ All screenshots and images inside blog posts are automatically interactive:
 
 ---
 
-*Last updated: October 2026*
+*Last updated: November 2026*
+
+---
+
+## 12. Links Page (Labs, Projects & External Resources)
+
+The **Links** page lives at [/links/](https://darshanhacks.com/links/) and appears in the main nav between Blog and About. It is a simple Markdown file — no coding needed to edit it.
+
+### How to add or update a link
+
+1. Open **`site/links.md`**
+2. Find the section you want to add to (Labs, Tools, Writing, etc.)
+3. Add a new line in this format:
+   ```markdown
+   - [Link Title](https://your-url.com) — Short description of what it is
+   ```
+4. Save the file. If the server is running locally, the page refreshes automatically.
+
+### Adding a new section
+
+To group links under a new heading, add a `##` heading above the links:
+```markdown
+## 🎓 Certifications
+
+- [OSCP — OffSec](https://www.offsec.com/courses/pen-200/) — My OSCP certification
+```
+
+### Section categories currently on the page
+
+| Section | What to put here |
+|---|---|
+| `🧪 Labs & Practice Platforms` | TryHackMe, Hack The Box, PortSwigger Web Academy, etc. |
+| `🛠️ Tools & Projects` | GitHub repos, scripts, open-source tools |
+| `📚 Courses & Training` | Udemy / other course links you've created or recommend |
+| `📝 Writing & Content` | Medium, Substack, YouTube, podcast links |
+| `🤝 Connect & Book` | Topmate, LinkedIn, socials, email |
+
+### Tip: add an emoji to section titles
+Use any emoji at the start of a `##` heading to make sections visually distinct, e.g. `## 🔬 Research`.
+
+The file is at: **[`site/links.md`](site/links.md)**

@@ -16,6 +16,7 @@
     <a class="brand" href="{{ '/' | relative_url }}">{{ site.author }}</a>
     <nav aria-label="Main">
       <a href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog' %} aria-current="page"{% endif %}>Blog</a>
+      <a href="{{ '/links/' | relative_url }}"{% if page.url == '/links/' %} aria-current="page"{% endif %}>Links</a>
       <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a>
     </nav>
   </header>
