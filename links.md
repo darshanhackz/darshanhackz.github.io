@@ -8,6 +8,7 @@ A collection of my labs, projects, tools, profiles, and resources — all in one
 
 ## 🖥️ CTF, Research, Resources
 - [LLM Backdoor Detection](https://backdoorscangame.vercel.app/) 
+- [LLM Penetesting Podcast | Prabh Nair](https://www.youtube.com/watch?v=UbmhXtTQL34)
 - [LLM Pentesting : The Boys Theme](https://vought-eight.vercel.app/)
 - [Basic API Pentesting CTF](https://shadowapi-six.vercel.app/)
 - [Cryptography CTF ](https://cryptoquest-633sjo1j3-darshan-naiks-projects-5da31419.vercel.app/)
