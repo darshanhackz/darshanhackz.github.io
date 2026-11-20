@@ -7,8 +7,8 @@ permalink: /links/
 A collection of my labs, projects, tools, profiles, and resources — all in one place.
 
 ## 🖥️ CTF, Research, Resources
-- [Model Pentesting Toolkit](https://modelpentest.vercel.app/) 
-- [LLM Backdoor Detection](https://backdoorscangame.vercel.app/) 
+- [Model Pentesting Toolkit Game](https://modelpentest.vercel.app/) 
+- [LLM Backdoor Detection Game](https://backdoorscangame.vercel.app/) 
 - [LLM Penetesting Podcast - Prabh Nair](https://www.youtube.com/watch?v=UbmhXtTQL34)
 - [LLM Pentesting : The Boys Theme](https://vought-eight.vercel.app/)
 - [Basic API Pentesting CTF](https://shadowapi-six.vercel.app/)
